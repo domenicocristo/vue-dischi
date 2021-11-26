@@ -27,7 +27,7 @@ export default {
       axios
       .get(this.apiUrl)
       .then((result) => {
-        this.SongsList = result.data;
+        this.SongsList = result.data.response;
       })
     }
   }
@@ -35,5 +35,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+#SongsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 100px 0;
+}
 </style>
