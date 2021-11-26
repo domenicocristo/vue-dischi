@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <img src="../assets/logo.png" alt="logo">
+      <img src="./assets/logo.png" alt="logo">
     </header>
 
     <main>
@@ -26,5 +26,17 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+header {
+  background-color: #2e3a46;
+}
+  img {
+    height: 50px;
+    margin: 10px;
+  }
+
+main {
+  background-color: #1e2d3b;
 }
 </style>
