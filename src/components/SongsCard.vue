@@ -24,12 +24,18 @@ export default {
     background-color: #2e3a46;
     margin: 10px;
     text-align: center;
+    cursor: pointer;
+    border: 1px solid #6f6962;
     img {
         height: 200px;
         width: 200px;
     }
+    img:hover {
+        border: 5px solid #3fb983;
+    }
     h3 {
         color: #fff;
+        margin: 10px 0;
     }
     div {
         color: #6f6962;

@@ -30,6 +30,10 @@ export default {
   font-family: 'Montserrat', sans-serif;
 }
 
+body {
+  background-color: #1e2d3b;
+}
+
 header {
   display: flex;
   align-items: center;
