@@ -51,10 +51,10 @@ export default {
       .then((result) => {
         this.SongsList = result.data.response;
       })
+    },
+    getGenre(genre) {
+      this.selectOption = genre;
     }
-  },
-  getGenre(genre) {
-    this.selectOption = genre;
   }
 }
 </script>
