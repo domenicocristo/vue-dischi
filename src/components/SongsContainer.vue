@@ -1,5 +1,6 @@
 <template>
   <section id="SongsContainer">
+    <Filter @select="getGenre"/>
     <div v-if="SongsList.length === 10">
       <SongsCard v-for="Song, i in SongsList" :key="i" :details="Song"/>
     </div>
@@ -12,20 +13,36 @@
 <script>
 import axios from "axios";
 import SongsCard from './SongsCard.vue';
+import Filter from './Filter.vue';
 
 export default {
   name: 'SongsContainer',
   components: {
-    SongsCard
+    SongsCard,
+    Filter
   },
   data() {
     return {
       apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
       SongsList: [],
+      selectGenre: "",
+      selectOption: "",
+
     }
   },
   created() {
     this.getMusic();
+  },
+  computed: {
+    filteredSongsList() {
+      if (this.selectOption === "") {
+        return this.SongsList;
+      }
+
+      return this.SongsList.filter((item) => {
+        return item.genre.includes(this.selectOption);
+      })
+    }
   },
   methods: {
     getMusic() {
@@ -35,6 +52,9 @@ export default {
         this.SongsList = result.data.response;
       })
     }
+  },
+  getGenre(genre) {
+    this.selectOption = genre;
   }
 }
 </script>
