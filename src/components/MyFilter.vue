@@ -35,6 +35,7 @@ export default {
         padding: 5px 10px;
         color: #fff;
         background-color: #2e3a46;
+        cursor: pointer;
     }
 }
 </style>
