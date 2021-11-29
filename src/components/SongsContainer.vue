@@ -1,8 +1,8 @@
 <template>
   <section id="SongsContainer">
-    <MyFilter @select="getGenre"/>
+    <MyFilter @selectEvent="getGenre"/>
     <div v-if="SongsList.length === 10">
-      <SongsCard v-for="Song, i in SongsList" :key="i" :details="Song"/>
+      <SongsCard v-for="Song, i in filteredSongsList" :key="i" :details="Song"/>
     </div>
     <div v-else>
       <h1>Loading...</h1>
@@ -35,7 +35,7 @@ export default {
   },
   computed: {
     filteredSongsList() {
-      if (this.selectOption === "") {
+      if (this.selectOption === "Tutti") {
         return this.SongsList;
       }
 
@@ -54,6 +54,7 @@ export default {
     },
     getGenre(genre) {
       this.selectOption = genre;
+      console.log(genre);
     }
   }
 }

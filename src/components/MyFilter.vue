@@ -1,11 +1,11 @@
 <template>
-    <div>
-        <select @change="$emit('select', selectGenre)">
-            <option >Tutti</option>
-            <option >Rock</option>
-            <option >Pop</option>
-            <option >Jazz</option>
-            <option >Metal</option>
+    <div id="">
+        <select v-model="selectGenre" @change="$emit('selectEvent', selectGenre)">
+            <option>Tutti</option>
+            <option>Rock</option>
+            <option>Pop</option>
+            <option>Jazz</option>
+            <option>Metal</option>
       </select>
     </div>
 </template>
@@ -18,12 +18,6 @@ export default {
           selectGenre: "",
       }
   },
-  methods: {
-      resetSelect() {
-          this.selectGenre = "";
-          this.$emit('select', this.selectGenre);
-      }
-  }
 }
 </script>
 
