@@ -12,7 +12,7 @@
 
 <script>
 export default {
-  name: 'filter',
+  name: 'MyFilter',
   data() {
       return {
           selectGenre: "",

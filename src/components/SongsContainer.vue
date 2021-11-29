@@ -1,6 +1,6 @@
 <template>
   <section id="SongsContainer">
-    <Filter @select="getGenre"/>
+    <MyFilter @select="getGenre"/>
     <div v-if="SongsList.length === 10">
       <SongsCard v-for="Song, i in SongsList" :key="i" :details="Song"/>
     </div>
@@ -13,13 +13,13 @@
 <script>
 import axios from "axios";
 import SongsCard from './SongsCard.vue';
-import Filter from './Filter.vue';
+import MyFilter from './MyFilter.vue';
 
 export default {
   name: 'SongsContainer',
   components: {
     SongsCard,
-    Filter
+    MyFilter
   },
   data() {
     return {
