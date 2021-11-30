@@ -41,25 +41,28 @@ export default {
       })
     }
   },
-  // methods: {
-  //   getMusic() {
-  //     axios
-  //     .get(this.apiUrl)
-  //     .then((result) => {
-  //       this.SongsList = result.data.response;
-  //     })
-  //   },
-  // }
+  methods: {
+    getMusic() {
+      axios
+      .get(this.apiUrl)
+      .then((result) => {
+        this.SongsList = result.data.response;
+      })
+    },
+  }
 }
 </script>
 
 <style scoped lang="scss">
 #SongsContainer {
-  padding: 100px 0;
+  padding: 50px 0;
   div {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+  }
+  h1 {
+    color: #fff;
   }
 }
 </style>

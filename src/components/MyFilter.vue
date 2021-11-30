@@ -17,7 +17,6 @@ export default {
   data() {
       return {
           selectGenre: "",
-          selectAuthor: "",
       }
   },
 }
@@ -27,6 +26,8 @@ export default {
 #selectGenre {
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-top: 50px;
     h3 {
         color: #fff;
         margin-right: 5px;
@@ -36,6 +37,7 @@ export default {
         color: #fff;
         background-color: #2e3a46;
         cursor: pointer;
+        border-radius: 10px;
     }
 }
 </style>
