@@ -27,15 +27,29 @@ export default {
   created() {
     this.getMusic();
   },
-  methods: {
-    getMusic() {
-      axios
-      .get(this.apiUrl)
-      .then((result) => {
-        this.SongsList = result.data.response;
+  props: {
+    selectOption: String,
+  },
+  computed: {
+    filteredSongsList() {
+      if (this.selectOption === "Tutti") {
+        return this.SongsList;
+      }
+
+      return this.SongsList.filter((item) => {
+        return item.genre.includes(this.selectOption);
       })
-    },
-  }
+    }
+  },
+  // methods: {
+  //   getMusic() {
+  //     axios
+  //     .get(this.apiUrl)
+  //     .then((result) => {
+  //       this.SongsList = result.data.response;
+  //     })
+  //   },
+  // }
 }
 </script>
 

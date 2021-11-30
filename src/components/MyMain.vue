@@ -1,7 +1,7 @@
 <template>
     <main>
       <MyFilter @selectEvent="getGenre"/>
-      <SongsContainer/>
+      <SongsContainer :selectOption="filteredSongsList"/>
     </main>
 </template>
 
@@ -17,25 +17,32 @@ export default {
   },
   data() {
     return {
-      selectGenre: "",
-      selectOption: "",
+        SongsList: [],
+        selectGenre: "",
+        selectOption: "",
     }
   },
-  computed: {
-    filteredSongsList() {
-      if (this.selectOption === "Tutti") {
-        return this.SongsList;
-      }
+//   computed: {
+//     filteredSongsList() {
+//       if (this.selectOption === "Tutti") {
+//         return this.SongsList;
+//       }
 
-      return this.SongsList.filter((item) => {
-        return item.genre.includes(this.selectOption);
-      })
-    }
-  },
+//       return this.SongsList.filter((item) => {
+//         return item.genre.includes(this.selectOption);
+//       })
+//     }
+//   },
   methods: {
+    getMusic() {
+      axios
+      .get(this.apiUrl)
+      .then((result) => {
+        this.SongsList = result.data.response;
+      })
+    },
     getGenre(genre) {
       this.selectOption = genre;
-      console.log(genre);
     }
   }
 }
