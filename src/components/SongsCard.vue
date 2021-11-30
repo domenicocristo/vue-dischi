@@ -29,6 +29,7 @@ export default {
     img {
         height: 200px;
         width: 200px;
+        margin-top: 10px;
     }
     img:hover {
         border: 5px solid #3fb983;
