@@ -1,24 +1,21 @@
 <template>
   <div id="app">
-    <header>
-      <img src="./assets/logo.png" alt="logo">
-      <h1>Music</h1>
-    </header>
+    <MyHeader/>
 
-    <main>
-      <SongsContainer/>
-    </main>
+    <MyMain/>
   </div>
 </template>
 
 <script>
-import SongsContainer from './components/SongsContainer.vue'
+import MyHeader from './components/MyHeader.vue'
+import MyMain from './components/MyMain.vue';
 
 export default {
   name: 'App',
   components: {
-    SongsContainer
-  }
+    MyHeader,
+    MyMain
+  },
 }
 </script>
 
@@ -31,25 +28,6 @@ export default {
 }
 
 body {
-  background-color: #1e2d3b;
-}
-
-header {
-  display: flex;
-  align-items: center;
-  background-color: #2e3a46;
-}
-  img {
-    height: 50px;
-    margin: 10px;
-  }
-  h1 {
-    display: inline-block;
-    color: #fff;
-    margin-left: 10px;
-  }
-
-main {
   background-color: #1e2d3b;
 }
 </style>
